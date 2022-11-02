@@ -24,13 +24,12 @@ public class day18 {
         String input = Files.readAllLines(Paths.get("data/day18.in")).get(0);
         int count = 0;
         for (int i = 0; i < 40; ++i) {
-            // System.out.println(input);
-            for (char c: input.toCharArray()) if (c == '.') count++;
+            for (int  j = 0; j < input.length(); j++) if (input.charAt(j) == '.') count++;
             input = iterate(input);
         }
         System.out.println(count);
         for (int i = 0; i < 400000 - 40; ++i) {
-            for (char c: input.toCharArray()) if (c == '.') count++;
+            for (int j = 0; j < input.length(); j++) if (input.charAt(j) == '.') count++;
             input = iterate(input);
         }
         System.out.println(count);
